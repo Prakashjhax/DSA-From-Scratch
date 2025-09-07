@@ -119,3 +119,101 @@ int main(){
     cout<<"constant";
 
 }
+
+
+// int printing the week name on the basis of number 1,2,3,4,5,6
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Give me a digit form 1-7, i will tell you week name : ";
+    cin>>n;
+    if (n==1){
+        cout<<"sunday";
+    }
+    else if (n==2){
+        cout<<"Monday";
+    }
+    else if (n==3){
+        cout<<"Tuesday";
+    }
+    else if (n==4){
+        cout<<"Wednesday";
+    }
+    else if (n==5){
+        cout<<"Thrusday";
+    }
+    else if (n==6){
+        cout<<"Friday";
+    }
+    else if(n==7){
+        cout<<"Saturday";
+    }
+    else{
+        cout<<"Please print under 1-7";
+    }
+}
+
+// loop and for loop
+
+#include<iostream>
+using namespace std;
+int main(){
+    for(int count=1; count<=16; count=count+1){
+        cout<<"PrakXh"<<endl;
+    }
+}
+
+// print first n natural number
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    for (int i=1; i<=n; i=i+1)
+    {
+        cout<<i<<endl;
+    }
+
+}
+
+
+// square of a number
+
+#include<iostream>
+using namespace std;
+    int main(){
+        int n;
+        cout<<"Enter the number : ";
+        cin>>n;
+
+        for (int i=1;i<=n; i=i+1)
+        {
+            cout<<i<<"Square is :"<<i*i<<endl;
+        }
+    }
+
+
+// print all even up to n
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter you no. : ";
+    cin>>n;
+    for (int i=2; i<=n; i=i+1)
+    {
+        if(i%2==0){
+            cout<<i<<" ";
+        }
+        else{
+
+        }
+    }
+}
+
+
+
+
