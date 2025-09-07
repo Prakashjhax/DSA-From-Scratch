@@ -73,3 +73,49 @@ int main(){
         cout<<"Teen age";
     }
 }
+
+// positive negative or zero hai
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    int num;
+    cout << "Enter your number: ";
+    cin >> num;
+
+    if (num > 0) {
+        cout << "Positive";
+    }
+    else if (num == 0) { 
+        cout << "0";
+    }
+    else {
+        cout << "Negative";
+    }
+}
+
+
+// vowel and consonent 
+
+#include<iostream>
+using namespace std;
+int main(){
+    char c;
+    cout<<"Give you char : ";
+    cin>>c;
+
+    if (c=='a')
+    cout<<"Vowel";
+    else if(c=='i')
+    cout<<"vowel";
+    else if (c=='o')
+    cout<<"vowel";
+    else if (c=='e')
+    cout<<"vowel";
+    else if (c=='u')
+    cout<<"vowel";
+    else
+    cout<<"constant";
+
+}
