@@ -37,3 +37,55 @@ int main(){
     cout<<"no";
 
 }
+
+ 
+//  Logical Operators
+
+#include<iostream>
+using namespace std;
+int main(){
+    int a,b,c;
+    cin>>a>>b>>c;
+    if(a>b && a>c)
+    cout<<"a is greater";
+    else if(b>a && b>c)
+    cout<<"b is greater";
+    else
+    cout<<"c is greater";
+}
+
+Or operator
+
+#include<iostream>
+using namespace std;
+int main(){
+    int a,b,c;
+    cin>>a>>b>>c;
+    if(a>b || a>c)
+    cout<<"a is greater";
+    else if(b>a || b>c)
+    cout<<"b is greater";
+    else
+    cout<<"c is greater";
+}
+
+
+
+// Bit wise operator 
+
+#include<iostream>
+using namespace std;
+int main(){
+    int ans= ~-10;
+    cout<<ans<<endl;
+}
+
+
+// assignment operator
+#include<iostream>
+using namespace std;
+int main(){
+    int a=3;
+    a+=2; // a=a+2
+    cout<<a;
+}
