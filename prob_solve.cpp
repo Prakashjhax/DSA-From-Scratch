@@ -118,3 +118,49 @@ int main(){
     return 0;
 }
 
+
+
+// rectangle length and breadth 
+
+#include<iostream>
+using namespace std;
+int main(){
+    int a,b,c,d;
+    cin>>a>>b>>c>>d;
+    if(a==c && b!=d || b==d && a!=c || a==d && b!=c || b==c && a!=d){
+        cout<<"YES";
+    }
+    else{
+        cout<<"NO";
+    }
+}
+
+
+// Bishop moves in chess 
+#include<iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int A, B;
+    cin >> A >> B;
+
+    if(A < 1 || A > 8 || B < 1 || B > 8) return 0;
+
+    int totalMoves = 0;
+    totalMoves += min(8 - A, 8 - B);
+    totalMoves += min(8 - A, B - 1);
+    totalMoves += min(A - 1, B - 1);
+    totalMoves += min(A - 1, 8 - B);
+
+    cout << totalMoves << endl;
+    return 0;
+}
+
+
+
+
+
+
+
+
