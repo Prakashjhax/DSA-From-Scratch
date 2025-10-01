@@ -109,3 +109,23 @@ int main() {
 
     return 0;
 }
+
+
+
+
+// remove element 
+
+
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        int i = 0; // pointer for next valid element position
+        for (int j = 0; j < nums.size(); j++) {
+            if (nums[j] != val) {
+                nums[i] = nums[j];
+                i++;
+            }
+        }
+        return i; // i = count of elements not equal to val
+    }
+};
