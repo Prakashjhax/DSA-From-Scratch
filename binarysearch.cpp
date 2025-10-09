@@ -129,3 +129,52 @@ public:
         return i; // i = count of elements not equal to val
     }
 };
+
+
+book allocation 
+
+#include <iostream>
+#include <vector>
+#include <numeric>
+#include <algorithm>
+using namespace std;
+
+class Solution {
+  public:
+    bool isPossible(vector<int> &arr, int n, int k, int mid) {
+        int studentCount = 1, pageSum = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > mid) return false;
+            if (pageSum + arr[i] > mid) {
+                studentCount++;
+                pageSum = arr[i];
+                if (studentCount > k) return false;
+            } else pageSum += arr[i];
+        }
+        return true;
+    }
+
+    int findPages(vector<int> &arr, int k) {
+        int n = arr.size();
+        if (n < k) return -1;
+        int low = *max_element(arr.begin(), arr.end());
+        int high = accumulate(arr.begin(), arr.end(), 0);
+        int ans = -1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (isPossible(arr, n, k, mid)) {
+                ans = mid;
+                high = mid - 1;
+            } else low = mid + 1;
+        }
+        return ans;
+    }
+};
+
+int main() {
+    vector<int> arr = {12, 34, 67, 90};
+    int k = 2;
+    Solution obj;
+    cout << "Minimum possible maximum pages = " << obj.findPages(arr, k);
+    return 0;
+}
