@@ -178,3 +178,57 @@ int main() {
     cout << "Minimum possible maximum pages = " << obj.findPages(arr, k);
     return 0;
 }
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    bool canPlace(vector<int>& position, int m, int dist) {
+        int count = 1; // place first ball
+        int lastPos = position[0];
+        
+        for (int i = 1; i < position.size(); i++) {
+            if (position[i] - lastPos >= dist) {
+                count++;
+                lastPos = position[i];
+            }
+            if (count >= m) return true; // successfully placed all balls
+        }
+        return false;
+    }
+
+    int maxDistance(vector<int>& position, int m) {
+        sort(position.begin(), position.end()); // sort basket positions
+        
+        int left = 1; // minimum possible distance
+        int right = position.back() - position.front(); // maximum possible distance
+        int ans = 0;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (canPlace(position, m, mid)) {
+                ans = mid;        // possible → try bigger distance
+                left = mid + 1;
+            } else {
+                right = mid - 1;  // not possible → try smaller distance
+            }
+        }
+        return ans;
+    }
+};
+
+int main() {
+    Solution sol;
+
+    // Example input
+    vector<int> position = {1, 2, 3, 4, 7};
+    int m = 3;
+
+    int result = sol.maxDistance(position, m);
+    cout << "Maximum minimum magnetic force: " << result << endl;
+
+    return 0;
+}
